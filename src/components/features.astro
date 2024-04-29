@@ -4,60 +4,59 @@ import { Icon } from "astro-icon";
 
 const features = [
   {
-    title: "Bring Your Own Framework",
+    title: "The products you know and love",
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+      "Semaglutide Products:  $249/mo for your first month and $349/mo thereafter",
     icon: "bx:bxs-briefcase",
   },
   {
-    title: "100% Static HTML, No JS",
+    title: "The products you trust and rely on",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
+      "Tirzepatide Products: $349/mo for your first month and $449/mo thereafter",
     icon: "bx:bxs-window-alt",
   },
   {
-    title: "On-Demand Components",
+    title: "On-Demand Compounding",
     description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
+      "No insurance required.",
     icon: "bx:bxs-data",
   },
   {
-    title: "Broad Integration",
+    title: "Slim Savers Membership",
     description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
+      "As a member, you can participate in the Slim Savers referral program to get discounts on the base prices for simply referring new members, including friends, co-workers, and neighbors",
     icon: "bx:bxs-bot",
   },
   {
-    title: "SEO Enabled",
+    title: "Referral discount programs available",
     description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
+    "When you refer new members to Slim Savers, you will receive an additional 10% discount (up to 100%) of your monthly cost[2]",
     icon: "bx:bxs-file-find",
   },
   {
-    title: "Community",
+    title: "It sells itself",
     description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
+      "For example, referring 5 new members who purchase products through Slim Saversl gets you a 50% discount on your monthly purchase, and referring 10 new members gets you a 100% discount.",
     icon: "bx:bxs-user",
   },
 ];
 ---
 
-<div class="mt-16 md:mt-0">
+<div class="mt-16">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Everything you need to start a website
+    What does Slim Savers offer?
   </h2>
   <p class="text-lg mt-4 text-slate-600">
-    Astro comes batteries included. It takes the best parts of state-of-the-art
-    tools and adds its own innovations.
+    We've negotiated discount prices from US compounding pharmacies that are ready to fill your prescription.
   </p>
 </div>
 
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16 mb-24">
   {
     features.map((item) => (
       <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
+        <div class="mt-1 bg-blue-100 rounded-2xl  p-3 w-12 h-12 shrink-0">
+          <Icon class="text-blue-700" name={item.icon} />
         </div>
         <div>
           <h3 class="font-semibold text-lg">{item.title}</h3>{" "}

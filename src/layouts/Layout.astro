@@ -2,24 +2,20 @@
 import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
-import "@fontsource-variable/inter/index.css";
+import "@fontsource/inter/variable.css";
 
 export interface Props {
   title: string;
 }
-
-const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
-
-const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
-  Astro.site
-).toString();
-
+// const { src } = await getImage({
+//   src: "../../assets/hero.png",
+//   width: 800,
+//   height: 742,
+//   format: "avif",
+// });
+// console.log(src);
+const resolvedImageWithDomain = new URL("/opengraph.jpg", Astro.url).toString();
 const { title } = Astro.props;
-
-const makeTitle = title
-  ? title + " | " + "Astroship"
-  : "Astroship - Starter Template for Astro with Tailwind CSS";
 ---
 
 <!DOCTYPE html>
@@ -32,9 +28,8 @@ const makeTitle = title
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
-      title={makeTitle}
+      title={`${title}${title && " | "}Astroship`}
       description="Astroship is a starter website template for Astro built with TailwindCSS."
-      canonical={canonicalURL}
       twitter={{
         creator: "@surjithctly",
         site: "@web3templates",
@@ -42,7 +37,6 @@ const makeTitle = title
       }}
       openGraph={{
         basic: {
-          url: canonicalURL,
           type: "website",
           title: `Astroship - Starter Template for Astro`,
           image: resolvedImageWithDomain,
@@ -62,6 +56,10 @@ const makeTitle = title
       /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
       img {
         content-visibility: auto;
+      }
+      /* Avoid Alpine.js Hidden Element Flash */
+      [x-cloak] {
+        display: none;
       }
     </style>
   </body>
